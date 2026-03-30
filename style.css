@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Soft, bright gradient background */
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Light Card Design for To-Do App */
+.todo-box {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.todo-box h2 {
+    color: #2d3436;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.todo-box h2 i {
+    color: #006fff;
+}
+
+/* Input Area */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #2d3436;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-section input:focus {
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.input-section button {
+    border: none;
+    background: #006fff;
+    color: white;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 111, 255, 0.3);
+}
+
+.input-section button:hover {
+    background: #005ce6;
+    transform: translateY(-2px);
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px; /* For scrollbar */
+}
+
+/* Custom Scrollbar for the list */
+.task-list::-webkit-scrollbar {
+    width: 5px;
+}
+.task-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+    word-break: break-word;
+}
+
+.task-list li.completed .task-text {
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+
+.task-text {
+    flex: 1;
+    color: #2d3436;
+    font-size: 0.95rem;
+    margin-right: 10px;
+}
+
+/* Action Buttons inside List */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-complete { color: #00cc66; }
+.btn-complete:hover { transform: scale(1.1); color: #00b359; }
+
+.btn-delete { color: #ff4757; }
+.btn-delete:hover { transform: scale(1.1); color: #ff3344; }
+
+/* --- Color Changing Description Animation --- */
+.developer-credit {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    animation: rgbText 6s infinite linear;
+}
+
+@keyframes rgbText {
+    0%   { color: #ff0055; text-shadow: 0 0 5px rgba(255,0,85,0.3); }
+    25%  { color: #0088ff; text-shadow: 0 0 5px rgba(0,136,255,0.3); }
+    50%  { color: #aa00ff; text-shadow: 0 0 5px rgba(170,0,255,0.3); }
+    75%  { color: #00cc66; text-shadow: 0 0 5px rgba(0,204,102,0.3); }
+    100% { color: #ff0055; text-shadow: 0 0 5px rgba(255,0,85,0.3); }
+}
