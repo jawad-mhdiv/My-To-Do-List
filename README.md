@@ -16,5 +16,5 @@ A basic tack management application built for parcticing front-end development s
   
 ## Live Demo
 
-##Author
+## Author
 Muhammad Jawad Golato
